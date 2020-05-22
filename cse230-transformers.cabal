@@ -1,0 +1,45 @@
+name:                cse230-transformers
+version:             0.1.0.0
+synopsis:            Starter code 
+license:             MIT
+license-file:        LICENSE
+author:              Ranjit Jhala
+maintainer:          jhala@cs.ucsd.edu
+category:            Language
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+Library
+  ghc-options:        -W
+  exposed-modules:    CSE230.BST,
+                      CSE230.WhilePlus.Types,
+                      CSE230.WhilePlus.Eval
+  Default-Extensions: OverloadedStrings
+
+  -- other-extensions:
+  build-depends:       base,
+                       parsec, 
+                       containers, 
+                       QuickCheck,
+                       mtl
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+test-suite test
+  default-language: Haskell98
+  type:             exitcode-stdio-1.0
+  hs-source-dirs:   test
+  Default-Extensions: OverloadedStrings
+  main-is:          Test.hs
+  build-depends:    base, 
+                    containers, 
+                    mtl,
+                    filepath,
+                    QuickCheck,
+                    tasty,
+                    tasty-hunit,
+                    tasty-quickcheck,
+                    process,
+                    cse230-transformers
+  other-modules:    Common 

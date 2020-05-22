@@ -1,0 +1,8 @@
+resolver: lts-14.12
+allow-newer: true
+packages:
+        - .
+extra-deps: 
+- htdp-image-1.1.0.0
+- AC-Angle-1.0
+- gloss-export-0.1.0.2
