@@ -6,6 +6,7 @@ module CSE230.WhilePlus.Eval where
 import qualified Data.Map as Map
 import           Control.Monad.State
 import           Control.Monad.Except
+import           Control.Monad.Identity
 import           CSE230.WhilePlus.Types
 
 ----------------------------------------------------------------------------------------------
@@ -88,7 +89,7 @@ evalS = error "fill this in"
 --   satisfies the constraints of MonadWhile:
 --------------------------------------------------------------------------
 
-type Eval a = ExceptT Value (State WState) a
+type Eval a = ExceptT Value (StateT WState (Identity)) a
 
 --------------------------------------------------------------------------
 -- | `runEval` implements a function to *run* the `Eval a` action from 
