@@ -1,17 +1,19 @@
+STACK       = stack --allow-different-user
+
 .PHONY: all test clean ghcid distclean
 
 all: test
 
-test:
-	stack test
+test:   clean
+	$(STACK) test
 
 clean:
 
-ghcid:
-	stack build ghcid && stack exec ghcid
-
 distclean: clean
-	stack clean
+	$(STACK) clean
+
+ghcid:
+	$(STACK) build ghcid && $(STACK) exec ghcid
 
 turnin: clean
 	git commit -a -m "turnin"
