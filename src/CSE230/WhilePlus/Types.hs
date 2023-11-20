@@ -47,7 +47,6 @@ data Expression
   | Op  Bop Expression Expression
   deriving (Show)
 
-
 data Bop 
   = Plus
   | Minus
@@ -79,7 +78,7 @@ block :: [Statement] -> Statement
 block = foldr Sequence Skip
 
 ----------------------------------------------------------------------------------------------
--- | `WState` is the "State" maintained by the interpreter's State-Transformer Monad
+-- | `WState` is the "State" maintained by the interpreter's State Monad
 --   if ws :: WState, you can "access" the `Store` and `Log` as (wStore ws) and (wLog ws)
 ----------------------------------------------------------------------------------------------
 
@@ -93,14 +92,18 @@ type Log      = [String]
 
 ------------------------------------------------------------------------------------
 -- | These are some helper functions to make it easy to "write" WHILE++ programs as 
---   Haskell: read the docs, and just print out the `test1`,`test2`, `test3` etc. 
+--   Haskell without implementing a parser.
+--   You do not strictly need to understand this to solve the assignment,
+--   but we recommend that you read the docs and just print out the `test1`,`test2`, `test3` etc. 
 --   in GHCi to understand what is going on.
 ------------------------------------------------------------------------------------
 
 (<-:) :: Variable -> Expression -> Statement
-(<-:) x e = Assign x e
-(<=:)    = Op Le
-(<:)     = Op Lt
+(<-:) = Assign
+(<=:) :: Expression -> Expression -> Expression
+(<=:) = Op Le
+(<:) :: Expression -> Expression -> Expression
+(<:)  = Op Lt
 
 -- | This will let us write "X" and automatically convert it to (Var "X") 
 instance IsString Expression where

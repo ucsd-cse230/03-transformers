@@ -11,7 +11,7 @@ import           CSE230.WhilePlus.Types
 
 ----------------------------------------------------------------------------------------------
 -- | A Combined monad that is BOTH 
---    (i) a WState-Transformer monad 
+--    (i) a State monad with state of type WState
 --    (ii) an Exception monad with exceptions of type Value 
 ----------------------------------------------------------------------------------------------
 type MonadWhile m = (MonadState WState m, MonadError Value m)
@@ -50,15 +50,12 @@ printString msg = do
 -- | Requirements & Expected Behavior of New Constructs
 ----------------------------------------------------------------------------------------------
 
-{-
-  * `Print s e` should print out (eg to stdout) log the string corresponding
-     to the string `s` followed by whatever `e` evaluates to, followed by a
-     newline --- for example, `Print "Three: " (IntVal 3)' should "display" 
-     i.e. add to the output log, the String  
-     
-     "Three: IntVal 3\n",
+{- 
+  * `Print s e` should log the string `s` followed by whatever `e` evaluates to, 
+     for example, `Print "Three: " (IntVal 3)' should "display" 
+     i.e. add to the output log, the string  "Three: IntVal 3",
 
-  * `Throw e` evaluates the expression `e` and throws it as an exception, and
+  * `Throw e` evaluates the expression `e` and throws it as an exception
 
   * `Try s x h` executes the statement `s` and if in the course of
      execution, an exception is thrown, then the exception comes shooting
@@ -89,7 +86,7 @@ evalS = error "fill this in"
 --   satisfies the constraints of MonadWhile:
 --------------------------------------------------------------------------
 
-type Eval a = ExceptT Value (StateT WState (Identity)) a
+type Eval a = ExceptT Value (StateT WState Identity) a
 
 --------------------------------------------------------------------------
 -- | `runEval` implements a function to *run* the `Eval a` action from 
