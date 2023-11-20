@@ -1,4 +1,4 @@
-# 03-transformers: Transformers and Testing
+# 03-transformers: Transformers and Testing (240 points)
 
 ## Overview
 
@@ -8,8 +8,11 @@ experience using *Monad-Transformers* and *Property-based Testing*.
 The assignment is in the following files that you will modify
 
 - [BST.hs](/src/CSE230/BST.hs)
-- [Types.hs](/src/CSE230/WhilePlus/Types.hs)
 - [Eval.hs](/src/CSE230/WhilePlus/Eval.hs)
+
+The following file contains useful definitions but does not need to be modified:
+
+- [Types.hs](/src/CSE230/Types.hs)
 
 Finally, there are a`Test.hs` has some sample tests to be used  
 to check your assignments before submitting.
@@ -29,8 +32,6 @@ with suitable Haskell implementations.
 ## Instructions
 
 ### Assignment Testing and Evaluation
-
-Your functions/programs **must** compile and run on the [VM](TODO).
 
 Most of the points, will be awarded automatically, by
 **evaluating your functions against a given test suite**.
@@ -76,10 +77,14 @@ doing `stack build` and load in `ghci` by doing `stack ghci`.
 
 ### Submission Instructions
 
-To submit your code:
+To submit your code, just do:
 
-1. Do a `git commit` and `git push` to make your repo uptodate;
-2. Submit on gradescope, by pointing gradescope to your github repo.
+```bash
+$ make turnin
+```
+### Collaborators
+
+As before please add the name of any collaborator in the file `COLLABORATORS.md`
 
 ## Problem 1: Binary Search Trees
 
