@@ -1,0 +1,104 @@
+{
+  "tests": [
+     { 
+      "name": "test-1",
+      "run": "stack test --test-arguments '-p test-1'",
+      "setup": "",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 30,
+      "points": 10
+    },
+     { 
+      "name": "test-2",
+      "run": "stack test --test-arguments '-p test-2'",
+      "setup": "",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 30,
+      "points": 10
+    },
+     { 
+      "name": "test-3",
+      "run": "stack test --test-arguments '-p test-3'",
+      "setup": "",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 30,
+      "points": 15
+    },
+     { 
+      "name": "prop_insert_bso",
+      "run": "stack test --test-arguments '-p prop_insert_bso'",
+      "setup": "",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 30,
+      "points": 3
+    },
+     { 
+      "name": "prop_insert_map",
+      "run": "stack test --test-arguments '-p prop_insert_map'",
+      "setup": "",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 30,
+      "points": 4
+    },
+     { 
+      "name": "prop_delete_bso",
+      "run": "stack test --test-arguments '-p prop_delete_bso'",
+      "setup": "",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 30,
+      "points": 6
+    },
+     { 
+      "name": "prop_delete_map",
+      "run": "stack test --test-arguments '-p prop_delete_map'",
+      "setup": "",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 30,
+      "points": 6
+    },
+     { 
+      "name": "prop_genBalHeight",
+      "run": "stack test --test-arguments '-p prop_genBalHeight'",
+      "setup": "",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 30,
+      "points": 2
+    },
+     { 
+      "name": "prop_genBalBalanced",
+      "run": "stack test --test-arguments '-p prop_genBalBalanced'",
+      "setup": "",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 30,
+      "points": 2
+    },
+     { 
+      "name": "prop_genBalBSO",
+      "run": "stack test --test-arguments '-p prop_genBalBSO'",
+      "setup": "",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 30,
+      "points": 2
+    }
+  ]
+}
